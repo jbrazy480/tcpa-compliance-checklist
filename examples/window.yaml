@@ -1,0 +1,5 @@
+# Example policy values, passed explicitly to CLI flags or library arguments.
+# The CLI does not automatically read this file.
+start: '09:00'
+end: '20:00'
+tz_override: America/New_York

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 240" role="img" aria-labelledby="title desc">
+<title id="title">TCPA toolkit review flow</title>
+<desc id="desc">Lead list to window check, internal DNC scrub, consent record check, and proposed dial queue. Separate legal review and National Registry checks remain required.</desc>
+<rect width="1080" height="240" fill="#f4f7fb"/>
+<g font-family="sans-serif" fill="#20354a">
+<text x="30" y="37" font-size="23" font-weight="bold">Offline checks before campaign approval</text>
+<g fill="#e1edf5" stroke="#38566e" stroke-width="2">
+<rect x="25" y="75" width="160" height="70" rx="10"/><rect x="235" y="75" width="160" height="70" rx="10"/>
+<rect x="445" y="75" width="170" height="70" rx="10"/><rect x="665" y="75" width="175" height="70" rx="10"/>
+<rect x="890" y="75" width="165" height="70" rx="10"/>
+</g>
+<g font-size="17" text-anchor="middle">
+<text x="105" y="115">Lead list</text><text x="315" y="115">Window check</text>
+<text x="530" y="105">Internal DNC</text><text x="530" y="128">scrub</text>
+<text x="752" y="105">Consent record</text><text x="752" y="128">check</text>
+<text x="972" y="105">Proposed</text><text x="972" y="128">dial queue</text>
+</g>
+<g stroke="#38566e" stroke-width="2" fill="none"><path d="M185 110h45m-8 -6 8 6-8 6M395 110h45m-8 -6 8 6-8 6M615 110h45m-8 -6 8 6-8 6M840 110h45m-8 -6 8 6-8 6"/></g>
+<text x="30" y="190" font-size="17">Separate gates: National Registry, state review, valid consent, scripts and human approval.</text>
+<text x="30" y="218" font-size="15">The toolkit does not place calls or determine legal eligibility.</text>
+</g></svg>

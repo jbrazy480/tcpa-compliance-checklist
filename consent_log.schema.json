@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Consent evidence record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "phone",
+    "consent_type",
+    "timestamp",
+    "source",
+    "disclosure_text",
+    "evidence_reference"
+  ],
+  "properties": {
+    "phone": {
+      "type": "string",
+      "pattern": "^\\+1[2-9][0-9]{2}[2-9][0-9]{6}$"
+    },
+    "consent_type": {
+      "enum": [
+        "prior_express_consent",
+        "prior_express_written_consent"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Offset-bearing timestamp; library accepts calendar-valid values without leap seconds."
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Source label or URL"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "disclosure_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ip_address": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "ipv4"
+        },
+        {
+          "type": "string",
+          "format": "ipv6"
+        }
+      ]
+    },
+    "user_agent": {
+      "type": "string"
+    },
+    "revoked_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

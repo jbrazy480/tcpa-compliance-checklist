@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tcpa-toolkit"
+version = "0.1.0"
+description = "Offline calling window, internal DNC and consent record checks"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6.0.2", "jsonschema>=4.23"]
+license = "MIT"
+
+[project.scripts]
+tcpa-check = "tcpa_toolkit.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tcpa_toolkit*"]
+
+[tool.setuptools.package-data]
+tcpa_toolkit = ["data/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

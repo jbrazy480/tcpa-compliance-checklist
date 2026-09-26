@@ -1,0 +1,4 @@
+include CHECKLIST.md checklist.yaml consent_log.schema.json requirements*.txt CONTRIBUTING.md CHANGELOG.md .env.example
+recursive-include docs *.svg *.gif *.md
+recursive-include examples *.csv *.txt *.jsonl *.yaml
+recursive-include scripts *.py

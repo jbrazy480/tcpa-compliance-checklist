@@ -1,0 +1,6 @@
+Derived from Google libphonenumber resources/timezones/map_data.txt
+Copyright (C) 2012 The Libphonenumber Authors
+Apache License 2.0, see LICENSE-libphonenumber.txt.
+Source: https://raw.githubusercontent.com/google/libphonenumber/master/resources/timezones/map_data.txt
+Retrieved 2026-09-26. Source SHA256: c8d71422e9a56ad7fc70790b42ab889854608074f4bff354a466af2ee785cb98
+Transformation: see docs/timezone-data.md for conservative additions; union all US/Canada timezone entries sharing a +1 NPA; omit country-wide and non-geographic fallbacks.
