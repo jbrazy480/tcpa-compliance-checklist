@@ -1,0 +1,8 @@
+# Example calling-window policy for a home services campaign (HVAC, plumbing,
+# electrical). Fictional example only. The CLI does not automatically read
+# this file; pass these values explicitly to --start/--end/--tz-override on
+# `tcpa-check window` or `tcpa-check next`.
+start: '08:00'
+end: '20:00'
+tz_override: America/Chicago
+notes: Verify each customer's actual timezone before dispatch; do not rely on area code alone.

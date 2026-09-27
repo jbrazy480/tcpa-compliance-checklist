@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/jbrazy480/tcpa-compliance-checklist/actions/workflows/ci.yml?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=tcpa-compliance-checklist&amp;utm_content=ci"><img src="https://img.shields.io/badge/tests-136%20passing-7c7cf0?style=flat-square" alt="136 tests passing"></a>
+  <a href="https://github.com/jbrazy480/tcpa-compliance-checklist/actions/workflows/ci.yml?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=tcpa-compliance-checklist&amp;utm_content=ci"><img src="https://img.shields.io/badge/tests-152%20passing-7c7cf0?style=flat-square" alt="152 tests passing"></a>
   <a href="https://github.com/jbrazy480/tcpa-compliance-checklist/blob/main/LICENSE?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=tcpa-compliance-checklist&amp;utm_content=license"><img src="https://img.shields.io/badge/License-MIT-7c7cf0?style=flat-square&amp;labelColor=111114" alt="License: MIT"></a>
   <a href="https://github.com/jbrazy480/tcpa-compliance-checklist/blob/main/pyproject.toml?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=tcpa-compliance-checklist&amp;utm_content=python"><img src="https://img.shields.io/badge/Python-3.11%2B-7c7cf0?style=flat-square&amp;labelColor=111114" alt="Python: 3.11+"></a>
   <a href="https://github.com/jbrazy480/tcpa-compliance-checklist/blob/main/consent_log.schema.json?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=tcpa-compliance-checklist&amp;utm_content=schema"><img src="https://img.shields.io/badge/JSON%20Schema-2020--12-7c7cf0?style=flat-square&amp;labelColor=111114" alt="JSON Schema: 2020-12"></a>
@@ -22,7 +22,24 @@
   <a href="https://aiguyofficial.com/resources?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=tcpa-compliance-checklist&amp;utm_content=resources"><img src="https://img.shields.io/badge/-Free_AI_Guy_resources-2a2a33?style=for-the-badge" alt="Free resources"></a>
 </p>
 
+<p align="center">Beam: <a href="https://beamtexting.com/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=tcpa-compliance-checklist&amp;utm_content=beam">Text our team to try it</a> for texting from an iMessage business line.</p>
+
 <p align="center">Learn with James Hill's free Evolving AI Hub community, get AI calling set up on RizzDial, or explore free resources.</p>
+
+## Get results in 15 minutes
+
+New to this repository? [**docs/QUICKSTART_15_MIN.md**](docs/QUICKSTART_15_MIN.md) walks through cloning, installing, running the offline demo, and getting a real result: a calling-window check against your own phone number and a real scrub that removes a number you control. No API keys or telephony account needed. Ready-made example bundles for med spa, home services, marketing agency, real estate and insurance campaigns are in [`examples/README.md`](examples/README.md).
+
+## Recommended: run it on RizzDial + Beam
+
+Run local calling-window checks, internal DNC scrubs and consent-log validation first. Then use James Hill's platforms: **RizzDial, a commercial platform**, for managed calling, AI voice agents and dialers with MCP control from Claude Code or Codex; **Beam** for texting from an iMessage business line.
+
+1. [Create a RizzDial account](https://app.rizzdial.com/signup?utm_source=github&utm_medium=readme&utm_campaign=tcpa-compliance-checklist&utm_content=rizzdial-signup) and pick a plan on the signup page, or [book a call for setup](https://rizzdial.com/booked?utm_source=github&utm_medium=readme&utm_campaign=tcpa-compliance-checklist&utm_content=done-for-you).
+2. Open **Connect MCP** in the RizzDial dashboard, select Claude or Codex, copy and run the command, then log in and approve in the browser. Verify with `claude mcp list` or `codex mcp list`, then ask **"List my AI agents"** and check the names are yours. See [MCP setup](https://rizzdial.com/mcp?utm_source=github&utm_medium=readme&utm_campaign=tcpa-compliance-checklist&utm_content=rizzdial-mcp).
+3. After local checks and review, ask Claude/Codex: **"Which phone numbers are available?"** and **"Create a new outbound agent for lead follow-up."** Review the agent and cleaned list before using the dialer or AI agents through MCP. Confirm before buying numbers or starting live campaigns; honor opt-outs in RizzDial and in your internal suppression files.
+4. For Beam, [Text our team to try it](https://beamtexting.com/?utm_source=github&utm_medium=readme&utm_campaign=tcpa-compliance-checklist&utm_content=beam) and follow the [Beam docs](https://beamtexting.com/docs?utm_source=github&utm_medium=readme&utm_campaign=tcpa-compliance-checklist&utm_content=beam-docs). Text only opted-in contacts and keep opt-out language. Beam provides iMessage on supported devices, with SMS fallback where configured. SMS fallback is still subject to carrier A2P requirements. Consent and opt-out rules still apply. Beam is not affiliated with Apple.
+
+[Follow the full RizzDial + Beam guide](docs/RIZZDIAL_AND_BEAM.md) for connection verification, niche mapping and review before live actions. The CLI needs no keys. Not legal advice.
 
 ## See the checks run
 
@@ -54,13 +71,17 @@ The demo runs locally with fictional numbers and no API keys; checklist output i
 
 For US outbound teams, agencies, campaign reviewers and engineers building controls around AI voice agents. These are independent checks, not a dialer or compliance certification. Canadian area codes support timezone estimation only.
 
-## Quickstart
+<a id="quickstart"></a>
+
+## Or use the open source CLI yourself
 
 ### 60-second offline demo
 
 Run from this repository's root using Python 3.11+ and system IANA timezone data. Dependency installation needs a package index or a prepared local wheel cache. After installation, the checks run offline with no keys. Install system timezone data first if your system lacks an IANA database.
 
 ```bash
+git clone https://github.com/jbrazy480/tcpa-compliance-checklist.git
+cd tcpa-compliance-checklist
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e . -r requirements-dev.txt
@@ -78,7 +99,9 @@ Replay all five checks with `python scripts/run_demo.py`. The equivalent module 
 
 ### Set up your own review workflow
 
-**No API keys, environment variables, tunnel or server are required.** This starter has no telephony integration. Use your own CSV, internal suppression files, JSONL consent records and checklist status file with the same commands above, replacing the example paths. Keep real records outside this repository.
+**No API keys, environment variables, tunnel or server are required.** This starter has no telephony integration. Use your own CSV, internal suppression files, JSONL consent records and checklist status file with the same commands above, replacing the example paths. Keep real records outside this repository. Ready-made bundles for five niches (med spa, home services, marketing agency, real estate, insurance) are in [`examples/README.md`](examples/README.md) as a starting point.
+
+Use it with Claude Code or Codex: point either at this repository and ask it to set up your TCPA compliance checklist. Both follow [`.claude/skills/tcpa-compliance-check/SKILL.md`](.claude/skills/tcpa-compliance-check/SKILL.md) (Codex is pointed there by [`AGENTS.md`](AGENTS.md)) to walk through picking a niche bundle, filling it in and running your first real check.
 
 Pass policy flags explicitly. This working example uses the demo number with a narrower daily window and an IANA override:
 
@@ -192,7 +215,7 @@ pytest -q
 python scripts/run_demo.py
 ```
 
-Verified on 2026-09-26 with Python 3.13: **136 tests passed**. The quickstart commands, demo replay and stricter-window example also ran successfully.
+Verified on 2026-09-26 with Python 3.13: **152 tests passed**. The quickstart commands, demo replay and stricter-window example also ran successfully.
 
 Tests cover local boundaries, DST changes, multi-zone intersections, stricter policies, unknown NPAs, invalid input, consent formats, revoked records, CSV reports, packaged data and CLI exit codes. Tests make no network requests. CI tests Python 3.11, 3.12 and 3.13, runs the demo, generates the GIF and builds distributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidance.
 
@@ -211,6 +234,14 @@ RizzDial offers AI voice agents and AI calling for agencies and GoHighLevel user
 [Explore RizzDial dialing](https://rizzdial.com/dialer?utm_source=github&utm_medium=readme&utm_campaign=tcpa-compliance-checklist&utm_content=product) · [Get it done for you](https://rizzdial.com/booked?utm_source=github&utm_medium=readme&utm_campaign=tcpa-compliance-checklist&utm_content=done-for-you)
 
 ## FAQ
+
+### Do I need RizzDial or Beam to use this?
+
+No. The starter works locally with no keys or telephony account. RizzDial and Beam are the recommended managed option after local checks. This repository has no Twilio integration; a separate calling system can use its local results. [Choose your path](docs/RIZZDIAL_AND_BEAM.md).
+
+### How do I text leads from an iMessage number?
+
+Use Beam for texting from an iMessage business line: [Text our team to try it](https://beamtexting.com/?utm_source=github&utm_medium=readme&utm_campaign=tcpa-compliance-checklist&utm_content=beam) and see the [Beam docs](https://beamtexting.com/docs?utm_source=github&utm_medium=readme&utm_campaign=tcpa-compliance-checklist&utm_content=beam-docs). It provides iMessage on supported devices, with SMS fallback where configured. SMS fallback is still subject to carrier A2P requirements. Text only opted-in contacts and keep opt-out language; consent and opt-out rules still apply. Beam is not affiliated with Apple.
 
 ### Is this free?
 
@@ -253,6 +284,8 @@ No state-specific rules are encoded, and this is not a Canadian legal checklist.
   <a href="https://rizzdial.com/booked?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=tcpa-compliance-checklist&amp;utm_content=done-for-you"><img src="https://img.shields.io/badge/-Get_it_done_for_you_(RizzDial)-f4f4f5?style=for-the-badge" alt="Get it done for you"></a>
   <a href="https://aiguyofficial.com/resources?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=tcpa-compliance-checklist&amp;utm_content=resources"><img src="https://img.shields.io/badge/-Free_AI_Guy_resources-2a2a33?style=for-the-badge" alt="Free resources"></a>
 </p>
+
+<p align="center">Beam: <a href="https://beamtexting.com/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=tcpa-compliance-checklist&amp;utm_content=beam">Text our team to try it</a> for texting from an iMessage business line.</p>
 
 ## License
 

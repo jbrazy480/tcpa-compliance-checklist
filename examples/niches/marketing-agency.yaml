@@ -1,0 +1,8 @@
+# Example calling-window policy for a marketing agency campaign calling
+# business contacts. Fictional example only. The CLI does not automatically
+# read this file; pass these values explicitly to --start/--end/--tz-override
+# on `tcpa-check window` or `tcpa-check next`.
+start: '09:00'
+end: '18:00'
+tz_override: America/New_York
+notes: Verify each contact's actual timezone before dispatch; do not rely on area code alone.

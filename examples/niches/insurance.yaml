@@ -1,0 +1,8 @@
+# Example calling-window policy for an insurance agency campaign (auto, home
+# and life quote follow-up). Fictional example only. The CLI does not
+# automatically read this file; pass these values explicitly to
+# --start/--end/--tz-override on `tcpa-check window` or `tcpa-check next`.
+start: '08:00'
+end: '19:00'
+tz_override: America/New_York
+notes: Verify each lead's actual timezone before dispatch; do not rely on area code alone.
